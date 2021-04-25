@@ -154,8 +154,4 @@ output
 search/result/
 ```
 
-## Known issues
-- According to seq2seq and image CNN training, you may get different latent vectors than ours.
-  As a result, you can find different results from our paper.
-  Still fusion shows better performance than rico or seq2seq only.
 
