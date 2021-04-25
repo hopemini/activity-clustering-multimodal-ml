@@ -44,6 +44,7 @@ $ deactivate
 
 ## Datasets
 Our dataset is based on the dataset provided by RICO.
+
 https://storage.cloud.google.com/crowdstf-rico-uiuc-4540/rico_dataset_v0.1/semantic_annotations.zip
 
 ## HOW TO EXECUTE OUR MODEL?
