@@ -78,6 +78,7 @@ output (n: 0, ... 4)
  autoencoder/seq2seq/log/
  data/seq2seq_23_n/
  data/seq2seq_34_n/
+ full_data/seq2seq_n/
 ```
 
 ## Conv autoencoder training and vector extraction
@@ -93,6 +94,8 @@ output (n: 0, ..., 4)
  data/conv_re_23_n/
  data/conv_se_34_n/
  data/conv_re_34_n/
+ full_data/conv_re_n/
+ full_data/conv_se_n/
 ```
 
 ## Test data extraction and data fusion
@@ -144,7 +147,20 @@ output
 ```
 
 ## Nearest neighbor search
-You can compare the results of the nearest neighbor search for a test data set. Saves the top 6 images of the search results.
+You can compare the results of the nearest neighbor search for *all* Rico dataset.
+Fuse again for all data to compare the results of best multimodals.
+```
+$ cd ../full_data
+$ . ./fusion.sh
+```
+
+output
+```
+ full_data/conv_re_0_n_conv_se_0_cat_0.3
+ full_data/rico_seq2seq_1_cat_0.7
+```
+And execute to search for all dataset.
+Finally the top 6 images of the search results are saved.
 ```
 $ cd ../search
 $ . ./search.sh
@@ -154,5 +170,3 @@ output
 ```
 search/result/
 ```
-
-
