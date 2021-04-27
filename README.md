@@ -64,7 +64,7 @@ output
  data/rico/
  data_processing/activity/
  data_processing/semantic_annotations/
- full_data/rico
+ full_data/rico/
 ```
 
 ## Seq2seq autoencoder training and vector extraction
