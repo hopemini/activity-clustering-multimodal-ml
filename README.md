@@ -102,7 +102,7 @@ output (n: 0, ..., 4)
 ## Test data extraction and data fusion
 Test data is extracted based on pre-categorized ground truth and data fusion is performed with weight.
 ```
-$ cd ../data
+$ cd ../../data
 $ . ./fusion.sh
 ```
 
