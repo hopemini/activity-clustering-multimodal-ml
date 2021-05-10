@@ -1,7 +1,7 @@
 # Activity Clustering using Multimodal Deep Learning for Android Applications
 
 ## Overview
-This project is a Torch implementation for our paper, which activity clustering using multimodal deep learning for android apps.
+This project is a Torch implementation for our paper, which activity clustering using multimodal deep learning for android applications.
 
 ## Hardware
 The models are trained using folloing hardware:
@@ -43,9 +43,12 @@ $ deactivate
 ```
 
 ## Datasets
+### Train dataset
 Our dataset is based on the dataset provided by RICO.
 
 https://storage.cloud.google.com/crowdstf-rico-uiuc-4540/rico_dataset_v0.1/semantic_annotations.zip
+
+### Test & validataion datasets
 
 ## HOW TO EXECUTE OUR MODEL?
 ## Data Processing
@@ -171,3 +174,5 @@ output
 ```
 search/result/
 ```
+## Our results
+## patch (for torchtext)
