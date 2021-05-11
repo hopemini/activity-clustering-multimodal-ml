@@ -42,12 +42,17 @@ $ # code your stuff
 $ deactivate
 ```
 
+- Use git lfs for large dataset file
+```
+$ sudo apt install git-lfs
+```
+
 ## Datasets
 ### Rico dataset
 - Our dataset is based on the dataset provided by RICO.
     - https://storage.cloud.google.com/crowdstf-rico-uiuc-4540/rico_dataset_v0.1/semantic_annotations.zip
 
-- **Check dataset size** (Because the file is large, it may not be got properly after git clone.)
+- **Check dataset size**
 ```
 $ ls data_processing/rico_dataset_v0.1_semantic_annotations.zip 
 154108 data_processing/rico_dataset_v0.1_semantic_annotations.zip
