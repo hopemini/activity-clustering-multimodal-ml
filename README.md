@@ -44,9 +44,15 @@ $ deactivate
 
 ## Datasets
 ### Train dataset
-Our dataset is based on the dataset provided by RICO.
+- Our dataset is based on the dataset provided by RICO.
 
 https://storage.cloud.google.com/crowdstf-rico-uiuc-4540/rico_dataset_v0.1/semantic_annotations.zip
+
+- Check dataset size
+'''
+$ ls data_processing/rico_dataset_v0.1_semantic_annotations.zip 
+154108 data_processing/rico_dataset_v0.1_semantic_annotations.zip
+'''
 
 ### Test & validataion datasets
 [Link1](https://drive.google.com/file/d/1QawDg9evv8pCx4Eoyg-9EIrJAtjFE93c/view?usp=sharing), [Link2](https://drive.google.com/file/d/17V7VioRXlrcaLo8yRDXmAM2l1mm4MdyP/view?usp=sharing)
