@@ -190,3 +190,6 @@ search/result/
 
 ## For torchtext >= 0.9.1
 Please, change all **torchtext** to **torchtext.legacy** in autoencoder/seq2seq python files
+```
+$ git am patch/0001-Change-torchtext-to-torchtext.legacy-for-torchtext-0.patch
+```
