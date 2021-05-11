@@ -179,4 +179,4 @@ search/result/
 [Link1](https://drive.google.com/file/d/1CHSsMy0Uh7UrVK3Wfbj2aeFKcSOAkkU_/view?usp=sharing), [Link2](https://drive.google.com/file/d/1X_S3XEr5NhJfQOB2GxKfp0Yf_SAxNeJV/view?usp=sharing)
 
 ## For torchtext >= 0.9.1
-Please, change **torch** to **torch.legacy** in autoencoder/seq2seq python files
+Please, change all **torchtext** to **torchtext.legacy** in autoencoder/seq2seq python files
