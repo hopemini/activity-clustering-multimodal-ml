@@ -1,0 +1,153 @@
+From b797cdfbed1e801e0542a904966368500b4461ac Mon Sep 17 00:00:00 2001
+From: Sungmin Choi <sungmin.choi@lge.com>
+Date: Tue, 11 May 2021 19:00:46 +0900
+Subject: [PATCH] Change torchtext to torchtext.legacy for torchtext >= 0.9.1
+
+---
+ autoencoder/seq2seq/dataset/fields.py        | 6 +++---
+ autoencoder/seq2seq/evaluator/evaluator.py   | 4 ++--
+ autoencoder/seq2seq/main/full_vector_save.py | 4 ++--
+ autoencoder/seq2seq/main/train.py            | 6 +++---
+ autoencoder/seq2seq/main/vector_save.py      | 4 ++--
+ autoencoder/seq2seq/models/trainer.py        | 4 ++--
+ 6 files changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/autoencoder/seq2seq/dataset/fields.py b/autoencoder/seq2seq/dataset/fields.py
+index 1bc525c..ff3fd50 100644
+--- a/autoencoder/seq2seq/dataset/fields.py
++++ b/autoencoder/seq2seq/dataset/fields.py
+@@ -1,12 +1,12 @@
+-import torchtext
++import torchtext.legacy
+ 
+-class SourceField(torchtext.data.Field):
++class SourceField(torchtext.legacy.data.Field):
+     def __init__(self, **kwargs):
+         kwargs['batch_first'] = True
+         kwargs['include_lengths'] = True
+         super(SourceField, self).__init__(**kwargs)
+ 
+-class TargetField(torchtext.data.Field):
++class TargetField(torchtext.legacy.data.Field):
+     SYM_SOS = '<sos>'
+     SYM_EOS = '<eos>'
+ 
+diff --git a/autoencoder/seq2seq/evaluator/evaluator.py b/autoencoder/seq2seq/evaluator/evaluator.py
+index 9d3f138..dd09403 100644
+--- a/autoencoder/seq2seq/evaluator/evaluator.py
++++ b/autoencoder/seq2seq/evaluator/evaluator.py
+@@ -2,7 +2,7 @@ from __future__ import print_function, division
+ 
+ import os
+ import torch
+-import torchtext
++import torchtext.legacy
+ import itertools
+ 
+ from loss.loss import NLLLoss
+@@ -31,7 +31,7 @@ class Evaluator(object):
+ 
+         #device = None if torch.cuda.is_available() else -1
+         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+-        batch_iterator = torchtext.data.BucketIterator(
++        batch_iterator = torchtext.legacy.data.BucketIterator(
+             dataset=data, batch_size=self.batch_size,
+             sort=True, sort_key=lambda x: len(x.src),
+             device=device, train=False)
+diff --git a/autoencoder/seq2seq/main/full_vector_save.py b/autoencoder/seq2seq/main/full_vector_save.py
+index 2498767..79b3e52 100644
+--- a/autoencoder/seq2seq/main/full_vector_save.py
++++ b/autoencoder/seq2seq/main/full_vector_save.py
+@@ -5,7 +5,7 @@ from tqdm import tqdm
+ 
+ import torch
+ from torch.optim.lr_scheduler import StepLR
+-import torchtext
++import torchtext.legacy
+ 
+ from models.trainer import Trainer
+ from models.seq2seq import Seq2seq
+@@ -63,7 +63,7 @@ for _iter in range(iters):
+     max_len = config["max_len"]
+     def len_filter(example):
+         return len(example.src) <= max_len and len(example.tgt) <= max_len
+-    train = torchtext.data.TabularDataset(
++    train = torchtext.legacy.data.TabularDataset(
+         path=train_path, format='tsv',
+         fields=[('src', src), ('srcp', srcp), ('tgt', tgt), ('tgtp', tgtp)],
+         filter_pred=len_filter
+diff --git a/autoencoder/seq2seq/main/train.py b/autoencoder/seq2seq/main/train.py
+index 2d29d13..4623440 100644
+--- a/autoencoder/seq2seq/main/train.py
++++ b/autoencoder/seq2seq/main/train.py
+@@ -5,7 +5,7 @@ import json
+ 
+ import torch
+ from torch.optim.lr_scheduler import StepLR
+-import torchtext
++import torchtext.legacy
+ 
+ from models.trainer import Trainer
+ from models.seq2seq import Seq2seq
+@@ -55,12 +55,12 @@ for _iter in range(args.iteration):
+ 
+     def len_filter(example):
+         return len(example.src) <= max_len and len(example.tgt) <= max_len
+-    train = torchtext.data.TabularDataset(
++    train = torchtext.legacy.data.TabularDataset(
+         path=train_path, format='tsv',
+         fields=[('src', src), ('srcp', srcp), ('tgt', tgt), ('tgtp', tgtp)],
+         filter_pred=len_filter
+     )
+-    dev = torchtext.data.TabularDataset(
++    dev = torchtext.legacy.data.TabularDataset(
+         path=dev_path, format='tsv',
+         fields=[('src', src), ('srcp', srcp), ('tgt', tgt), ('tgtp', tgtp)],
+         filter_pred=len_filter
+diff --git a/autoencoder/seq2seq/main/vector_save.py b/autoencoder/seq2seq/main/vector_save.py
+index e1c73e5..78c38a9 100644
+--- a/autoencoder/seq2seq/main/vector_save.py
++++ b/autoencoder/seq2seq/main/vector_save.py
+@@ -5,7 +5,7 @@ from tqdm import tqdm
+ 
+ import torch
+ from torch.optim.lr_scheduler import StepLR
+-import torchtext
++import torchtext.legacy
+ 
+ from models.trainer import Trainer
+ from models.seq2seq import Seq2seq
+@@ -66,7 +66,7 @@ for _iter in range(args.iteration):
+     max_len = config["max_len"]
+     def len_filter(example):
+         return len(example.src) <= max_len and len(example.tgt) <= max_len
+-    train = torchtext.data.TabularDataset(
++    train = torchtext.legacy.data.TabularDataset(
+         path=train_path, format='tsv',
+         fields=[('src', src), ('srcp', srcp), ('tgt', tgt), ('tgtp', tgtp)],
+         filter_pred=len_filter
+diff --git a/autoencoder/seq2seq/models/trainer.py b/autoencoder/seq2seq/models/trainer.py
+index 3406d8c..739c491 100644
+--- a/autoencoder/seq2seq/models/trainer.py
++++ b/autoencoder/seq2seq/models/trainer.py
+@@ -5,7 +5,7 @@ import random
+ import time
+ 
+ import torch
+-import torchtext
++import torchtext.legacy
+ from torch import optim
+ 
+ from evaluator.evaluator import Evaluator
+@@ -72,7 +72,7 @@ class Trainer(object):
+ 
+         #device = torch.cuda if torch.cuda.is_available() else torch
+         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+-        batch_iterator = torchtext.data.BucketIterator(
++        batch_iterator = torchtext.legacy.data.BucketIterator(
+             dataset=data, batch_size=self.batch_size,
+             sort=False, sort_within_batch=True,
+             sort_key=lambda x: len(x.src),
+-- 
+2.25.1
+
