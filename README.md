@@ -49,7 +49,7 @@ Our dataset is based on the dataset provided by RICO.
 https://storage.cloud.google.com/crowdstf-rico-uiuc-4540/rico_dataset_v0.1/semantic_annotations.zip
 
 ### Test & validataion datasets
-[Link1](https://drive.google.com/file/d/1QawDg9evv8pCx4Eoyg-9EIrJAtjFE93c/view?usp=sharing)[Link2](https://drive.google.com/file/d/17V7VioRXlrcaLo8yRDXmAM2l1mm4MdyP/view?usp=sharing)
+[Link1](https://drive.google.com/file/d/1QawDg9evv8pCx4Eoyg-9EIrJAtjFE93c/view?usp=sharing), [Link2](https://drive.google.com/file/d/17V7VioRXlrcaLo8yRDXmAM2l1mm4MdyP/view?usp=sharing)
 
 ## HOW TO EXECUTE OUR MODEL?
 ## Data Processing
@@ -175,5 +175,7 @@ output
 ```
 search/result/
 ```
-## Our results
+## Our experimental results
+[Link1](https://drive.google.com/file/d/1CHSsMy0Uh7UrVK3Wfbj2aeFKcSOAkkU_/view?usp=sharing), [Link2](https://drive.google.com/file/d/1X_S3XEr5NhJfQOB2GxKfp0Yf_SAxNeJV/view?usp=sharing)
+
 ## patch (for torchtext)
