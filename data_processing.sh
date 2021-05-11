@@ -1,9 +1,8 @@
 #!/bin/bash
 
 echo 'Downloading Rico semantic dataset...'
-wget https://storage.cloud.google.com/crowdstf-rico-uiuc-4540/rico_dataset_v0.1/semantic_annotations.zip -P data_processing
 cd data_processing
-unzip semantic_annotations.zip
+unzip rico_dataset_v0.1_semantic_annotations.zip
 cd semantic_annotations
 mkdir image
 mkdir image/all
