@@ -4,7 +4,7 @@
 This project is a Torch implementation for our paper, which activity clustering using multimodal deep learning for android applications.
 
 ## Hardware
-The models are trained using folloing hardware:
+The models are trained using following hardware:
 - Ubuntu 18.04.5 LTS
 - NVIDA TITAN Xp 12GB
 - Intel(R) Xeon(R) W-2145 CPU @ 3.70GHz
