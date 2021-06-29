@@ -12,9 +12,6 @@ import matplotlib.pyplot as plt
 import matplotlib
 from sklearn.cluster import KMeans
 from sklearn.mixture import GaussianMixture
-from sklearn.cluster import DBSCAN
-from sklearn.cluster import Birch
-from sklearn.cluster import OPTICS
 
 par = argparse.ArgumentParser()
 par.add_argument("-d", "--data_name", default="rico_seq2seq",
@@ -133,66 +130,6 @@ def gaussian_mixture(data, name_list, data_name, result_path, vis_path):
     visualization(data, predict, data_name, vis_path, k)
     print("Done.\n")
 
-def dbscan(data, name_list, data_name, result_path, vis_path):
-    print("Start DBSCAN clustering..")
-
-    model = DBSCAN(eps=0.5, min_samples=10)
-    model.fit(data)
-    k = len(set(model.labels_)) - (1 if -1 in model.labels_ else 0)
-    predict = model.fit_predict(data)
-
-    result_path = result_path + "dbscan/"
-    if not os.path.exists(result_path):
-        os.mkdir(result_path)
-    vis_path = vis_path + "dbscan/"
-    if not os.path.exists(vis_path):
-        os.mkdir(vis_path)
-
-    #image_classification(name_list, predict, result_path, k)
-    save_result(name_list, predict, result_path, k)
-    visualization(data, predict, data_name, vis_path, k)
-    print("Done.\n")
-
-def birch(data, name_list, data_name, result_path, vis_path):
-    print("Start Birch clustering..")
-    k = 18
-
-    model = Birch(n_clusters=k)
-    model.fit(data)
-    predict = model.predict(data)
-
-    result_path = result_path + "birch/"
-    if not os.path.exists(result_path):
-        os.mkdir(result_path)
-    vis_path = vis_path + "birch/"
-    if not os.path.exists(vis_path):
-        os.mkdir(vis_path)
-
-    #image_classification(name_list, predict, result_path, k)
-    save_result(name_list, predict, result_path, k)
-    visualization(data, predict, data_name, vis_path, k)
-    print("Done.\n")
-
-def optics(data, name_list, data_name, result_path, vis_path):
-    print("Start OPTICS clustering..")
-
-    model = OPTICS(min_samples=10)
-    model.fit(data)
-    k = max(model.labels_)
-    predict = model.fit_predict(data)
-
-    result_path = result_path + "optics/"
-    if not os.path.exists(result_path):
-        os.mkdir(result_path)
-    vis_path = vis_path + "optics/"
-    if not os.path.exists(vis_path):
-        os.mkdir(vis_path)
-
-    #image_classification(name_list, predict, result_path, k)
-    save_result(name_list, predict, result_path, k)
-    visualization(data, predict, data_name, vis_path, k)
-    print("Done.\n")
-
 if __name__ == "__main__":
     fusion_type = "_" + args.fusion_type if args.fusion_type is not None else ""
     scaler = "_" + args.scaler if args.scaler is not None else ""
@@ -225,17 +162,3 @@ if __name__ == "__main__":
         kmeans(data, name_list, data_name, result_path, vis_path)
     except Exception as e:
         print("kmeans error. ", e)
-""" we do not use the following clusterings in ICSE2021
-    try:
-        dbscan(data, name_list, data_name, result_path, vis_path)
-    except Exception as e:
-        print("DBSCAN error. ", e)
-    try:
-        birch(data, name_list, data_name, result_path, vis_path)
-    except Exception as e:
-        print("birch error. ", e)
-    try:
-        optics(data, name_list, data_name, result_path, vis_path)
-    except Exception as e:
-        print("OPTICS error. ", e)
-"""
