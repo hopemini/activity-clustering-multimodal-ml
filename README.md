@@ -1,4 +1,4 @@
-# Activity Clustering using Multimodal Deep Learning for Android Applications
+# An empirical study on Activity Clustering for Android Applications
 
 ## Overview
 This project is a Torch implementation for our paper, which activity clustering using multimodal deep learning for android applications.
