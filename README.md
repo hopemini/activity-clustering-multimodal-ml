@@ -83,13 +83,13 @@ output
 ```
 
 ## Seq2seq autoencoder training and vector extraction
-Train the data 5-iterations with the seq2seq autoencoder and extract the latent vector.
+Train the data 30 iterations with the seq2seq autoencoder and extract the latent vector.
 ```
 $ cd autoencoder/seq2seq
 $ . ./train.sh
 ```
 
-output (n: 0, ... 4)
+output (n: 0, ..., 29)
 ```
  autoencoder/seq2seq/log/
  data/seq2seq_23_n/
@@ -98,12 +98,12 @@ output (n: 0, ... 4)
 ```
 
 ## Conv autoencoder training and vector extraction
-Train the data 5-iterations with the conv autoencoder and extract the latent vector.
+Train the data 30 iterations with the conv autoencoder and extract the latent vector.
 ```
 $ cd autoencoder/conv
 $ . ./train.sh
 ```
-output (n: 0, ..., 4)
+output (n: 0, ..., 29)
 ```
  autoencoder/conv/log/
  data/conv_se_23_n/
@@ -121,7 +121,7 @@ $ cd ../../data
 $ . ./fusion.sh
 ```
 
-output (n: 0, ..., 4, f: add, cat,  m: 1, ..., 9)
+output (n: 0, ..., 29, f: add, cat,  m: 1, ..., 9)
 ```
  /data/conv_re_23_n_conv_se_23_n_f_0.m
  /data/rico_23_conv_re_23_n_f_0.m
@@ -187,7 +187,8 @@ output
 search/result/
 ```
 ## Our experimental results
-[Link1](https://drive.google.com/file/d/1CHSsMy0Uh7UrVK3Wfbj2aeFKcSOAkkU_/view?usp=sharing), [Link2](https://drive.google.com/file/d/1X_S3XEr5NhJfQOB2GxKfp0Yf_SAxNeJV/view?usp=sharing)
+5 iterations: [Link1](https://drive.google.com/file/d/1CHSsMy0Uh7UrVK3Wfbj2aeFKcSOAkkU_/view?usp=sharing), [Link2](https://drive.google.com/file/d/1X_S3XEr5NhJfQOB2GxKfp0Yf_SAxNeJV/view?usp=sharing),
+30 iterations: [Link3](https://drive.google.com/file/d/1Gwj0xIV0fZRVCtrE6l_rmhbwri72G0Cq/view?usp=sharing)
 
 ## For torchtext >= 0.9.1
 Please, change all **torchtext** to **torchtext.legacy** in autoencoder/seq2seq python files
