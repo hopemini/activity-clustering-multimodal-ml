@@ -7,12 +7,12 @@ mkdir log/pth
 
 export PYTHONPATH=.
 echo 'Start seq2seq autuencoder training...'
-python main/train.py -i 5
+python main/train.py -i 30
 
 echo 'vector save...'
-python main/vector_save.py -i 5
+python main/vector_save.py -i 30
 
 echo 'full vector save...'
-python main/full_vector_save.py -i 5
+python main/full_vector_save.py -i 30
 
 echo 'done...'

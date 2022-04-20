@@ -16,7 +16,7 @@ args = par.parse_args()
 clustering_algorithms = ['gaussian_mixture', 'kmeans']
 fusion_types = ["add", "cat"]
 weights = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9"]
-iteration = ["0", "1", "2", "3", "4"]
+iteration = 30
 class_num = ["23", "34"]
 conv_types = ["se", "re"]
 with open('ground_truth_list.json', 'r') as f:
@@ -151,44 +151,44 @@ if __name__ == "__main__":
     for c_num in class_num:
         data_name = "rico_" + c_num
         run(data_name, c_num)
-        for _iter in iteration:
-            data_name = "seq2seq_" + c_num + "_" + _iter
+        for _iter in range(iteration):
+            data_name = "seq2seq_" + c_num + "_" + str(_iter)
             run(data_name, c_num)
             for c_type in conv_types:
-                data_name = "conv_" + c_type + "_" + c_num + "_" + _iter
+                data_name = "conv_" + c_type + "_" + c_num + "_" + str(_iter)
                 run(data_name, c_num)
             for f_type in fusion_types:
-                data_name = "rico_" + c_num + "_seq2seq_" + c_num + "_" + _iter + "_" + f_type
+                data_name = "rico_" + c_num + "_seq2seq_" + c_num + "_" + str(_iter) + "_" + f_type
                 run(data_name, c_num)
             for f_type in fusion_types:
-                data_name = "conv_re_" + c_num + "_" + _iter + "_conv_se_" + c_num + "_" + _iter + "_" + f_type
+                data_name = "conv_re_" + c_num + "_" + str(_iter) + "_conv_se_" + c_num + "_" + str(_iter) + "_" + f_type
                 run(data_name, c_num)
             for c_type in conv_types:
                 for f_type in fusion_types:
                     data_name = ("rico_" + c_num + "_conv_" + c_type + "_" +
-                                 c_num + "_" + _iter + "_" + f_type)
+                                 c_num + "_" + str(_iter) + "_" + f_type)
                     run(data_name, c_num)
                 for f_type in fusion_types:
-                    data_name = ("seq2seq_" + c_num + "_" + _iter + "_conv_" + c_type + "_" +
-                                 c_num + "_" + _iter + "_" + f_type)
+                    data_name = ("seq2seq_" + c_num + "_" + str(_iter) + "_conv_" + c_type + "_" +
+                                 c_num + "_" + str(_iter) + "_" + f_type)
                     run(data_name, c_num)
             for f_type in fusion_types:
                 for w in weights:
-                    data_name = "rico_" + c_num + "_seq2seq_" + c_num + "_" + _iter + "_" + f_type + "_" + w
+                    data_name = "rico_" + c_num + "_seq2seq_" + c_num + "_" + str(_iter) + "_" + f_type + "_" + w
                     run(data_name, c_num)
             for f_type in fusion_types:
                 for w in weights:
-                    data_name = "conv_re_" + c_num + "_" + _iter + "_conv_se_" + c_num + "_" + _iter + "_" + f_type + "_" + w
+                    data_name = "conv_re_" + c_num + "_" + str(_iter) + "_conv_se_" + c_num + "_" + str(_iter) + "_" + f_type + "_" + w
                     run(data_name, c_num)
             for c_type in conv_types:
                 for w in weights:
                     for f_type in fusion_types:
                         data_name = ("rico_" + c_num + "_conv_" + c_type + "_" +
-                                     c_num + "_" + _iter + "_" + f_type + "_" + w)
+                                     c_num + "_" + str(_iter) + "_" + f_type + "_" + w)
                         run(data_name, c_num)
                     for f_type in fusion_types:
-                        data_name = ("seq2seq_" + c_num + "_" + _iter + "_conv_" + c_type + "_" +
-                                     c_num + "_" + _iter + "_" + f_type + "_" + w)
+                        data_name = ("seq2seq_" + c_num + "_" + str(_iter) + "_conv_" + c_type + "_" +
+                                     c_num + "_" + str(_iter) + "_" + f_type + "_" + w)
                         run(data_name, c_num)
 
     order_total_best_result = sorted(total_best_result.items(), reverse=True, key=lambda item: item[1])
