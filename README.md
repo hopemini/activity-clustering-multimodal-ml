@@ -13,7 +13,7 @@ The models are trained using following hardware:
 ## Dependencies
 - Python version is 3.6.7
 
-We use the following version of Pytorch.
+We use the following versions of Pytorch.
 
 - torch==1.1.0
 - torchtext==0.3.1
