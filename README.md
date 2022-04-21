@@ -25,6 +25,22 @@ We use the following version of Pytorch.
 - pandas==0.25.0
 - Etc. (Included in "requirements.txt")
 
+We also checked the following versions of Pytorch
+
+- matplotlib==3.3.4
+- numpy==1.19.5
+- pandas==1.1.5
+- Pillow==8.4.0
+- scikit-learn==0.24.2
+- scipy==1.5.4
+- seaborn==0.11.2
+- six==1.15.0
+- torch==1.8.1+cu111
+- torchaudio==0.8.1
+- torchtext==0.9.1
+- torchvision==0.9.1+cu111
+- tqdm==4.62.3
+
 ## Prerequisite
 - Use Tkinter
 ```
