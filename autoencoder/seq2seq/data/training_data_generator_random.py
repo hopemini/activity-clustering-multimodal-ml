@@ -83,8 +83,8 @@ for _iter in range(args.iteration):
 
     for files in tqdm(train_data_path_random):
         f = files.split('/')[-1].split('.')[0]
-        os.system('cp ' + se_img_path + 'all/1/' + f + '.png ' + se_img_path + train_path)
-        os.system('cp ' + re_img_path + 'all/1/' + f + '.jpg ' + re_img_path + train_path)
+        os.system('ln -s ../../all/1/' + f + '.png ' + se_img_path + train_path)
+        os.system('ln -s ../../all/1/' + f + '.jpg ' + re_img_path + train_path)
 
     train_data = open("data/train_data_" + str(num) + "_" + str(_iter) +  ".txt", 'w')
     for p in tqdm(train_data_path_random):

@@ -192,7 +192,7 @@ class Trainer:
 if __name__ == "__main__":
     for _iter in range(args.iteration):
         ## Set data loader
-        data_all_path = data_path + '/image/' + str(num) + '_' + str(_iter) + '/1/'
+        data_all_path = data_path + '/image/' + str(num) + '_' + str(_iter) + '/'
         dataset = datasets.ImageFolder(root=data_all_path,
                                    transform=transforms.Compose([
                                        transforms.Resize((256,128)),
