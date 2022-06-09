@@ -203,8 +203,7 @@ output
 search/result/
 ```
 ## Our experimental results
-5 iterations: [Link1](https://drive.google.com/file/d/1CHSsMy0Uh7UrVK3Wfbj2aeFKcSOAkkU_/view?usp=sharing), [Link2](https://drive.google.com/file/d/1X_S3XEr5NhJfQOB2GxKfp0Yf_SAxNeJV/view?usp=sharing),
-30 iterations: [Link3](https://drive.google.com/file/d/1Gwj0xIV0fZRVCtrE6l_rmhbwri72G0Cq/view?usp=sharing)
+30 iterations: [Link](https://drive.google.com/file/d/1Gwj0xIV0fZRVCtrE6l_rmhbwri72G0Cq/view?usp=sharing)
 
 ## For torchtext >= 0.9.1
 Please, change all **torchtext** to **torchtext.legacy** in autoencoder/seq2seq python files
