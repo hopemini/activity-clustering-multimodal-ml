@@ -77,6 +77,7 @@ $ ls data_processing/rico_dataset_v0.1_semantic_annotations.zip
 
 ### Test & validataion datasets
 [Link1](https://drive.google.com/file/d/1QawDg9evv8pCx4Eoyg-9EIrJAtjFE93c/view?usp=sharing), [Link2](https://drive.google.com/file/d/17V7VioRXlrcaLo8yRDXmAM2l1mm4MdyP/view?usp=sharing)
+[Description](https://github.com/hopemini/activity-clustering-multimodal-ml/tree/main/ground_truth)
 
 ## HOW TO EXECUTE OUR MODEL?
 ## Data Processing
