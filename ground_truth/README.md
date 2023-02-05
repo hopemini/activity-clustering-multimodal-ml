@@ -28,7 +28,6 @@
 | c21 | c21 provides a type that contains almost any image. c21 is divided into r24, r25, r26, and r27. | 
 | c22 | c22 displays a type of ``open and shared with''. c22 is divided into r28 and r29. | 
 | c23 | c23 represents any type of popup. c23 is divided into r30, r31, r32, r33, and r34. |
-|-----|----------|
 | r20 | r20 is an advertisement type with a button to move to another activity at the bottom of the screen.  | 
 | r21 | r21 is a type of continued name. This type contains login activity without an input form. | 
 | r22 | r22 is a combination of text, images, and buttons, excluding r20 and r21. | 
