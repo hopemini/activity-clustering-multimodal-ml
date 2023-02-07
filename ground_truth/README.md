@@ -2,6 +2,10 @@
 
 ![Test dataset](https://github.com/hopemini/activity-clustering-multimodal-ml/blob/main/ground_truth/test_dataset.png)
 
+|Category| # of validation dataset| # of test dataset|
+|----|----|----|
+|C23 |700| 700|
+|R34| 1000 | 1000|
 
 |Label|Description|
 |-----|-----------|
