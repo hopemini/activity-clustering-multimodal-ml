@@ -215,7 +215,7 @@ search/result/
 |2 |  R &#8917; S ($\mathcal{K}$ 0.6) | 0.346 | S + se ($\mathcal{K}$ 0.7) | 0.603 |  R + S ($\mathcal{K}$ 0.7) | 0.431 |
 |3  |  R &#8917; S ($\mathcal{K}$ 0.7) | 0.345 | S + se ($\mathcal{K}$ 0.9) | 0.603 |  re + se ($\mathcal{G}$ 0.1) | 0.429  |
 |4  |  R + S ($\mathcal{G}$ 0.7)  | 0.344 | S &#8917; se ($\mathcal{G}$ 0.9) | 0.602 | R &#8917; S ($\mathcal{K}$ 0.6) | 0.424 |
-|5  | R + S (K 0.7) | 0.342 | R + se ($\mathcal{G}$ 0.8) | 0.602 | S &#8917; se ($\mathcal{G}$ 0.8) | 0.420 |
+|5  | R + S ($\mathcal{K}$ 0.7) | 0.342 | R + se ($\mathcal{G}$ 0.8) | 0.602 | S &#8917; se ($\mathcal{G}$ 0.8) | 0.420 |
 |* | R ($\mathcal{G}$) | 0.259 |  R ($\mathcal{G}$) | 0.543 |  R ($\mathcal{G}$) | 0.346 |
 |* | S ($\mathcal{K}$) | 0.290  |  S ($\mathcal{K}$) | 0.546 |  S ($\mathcal{G}$) | 0.371 |
 |* | re ($\mathcal{K}$) | 0.168 |  re ($\mathcal{K}$) | 0.463 | re ($\mathcal{K}$) | 0.251 |
