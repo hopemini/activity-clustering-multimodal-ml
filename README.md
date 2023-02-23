@@ -207,6 +207,39 @@ search/result/
 ## Our experimental results
 30 iterations: [Link](https://drive.google.com/file/d/1Gwj0xIV0fZRVCtrE6l_rmhbwri72G0Cq/view?usp=sharing)
 
+
+# C23
+| | Fusion | ARI | Fusion | NMI | Fusion | Purity |
+|---|---|---|---|---|---|---|
+|1|  R &#8917; S ($\mathcal{G}$ 0.7)  | 0.357 |  S + se ($\mathcal{G}$ 0.9) | 0.604 |  R &#8917; S ($\mathcal{K}$ 0.7) | 0.433 |
+|2 |  R &#8917; S ($\mathcal{K}$ 0.6) | 0.346 | S + se ($\mathcal{K}$ 0.7) | 0.603 |  R + S ($\mathcal{K}$ 0.7) | 0.431 |
+|3  |  R &#8917; S ($\mathcal{K}$ 0.7) | 0.345 | S + se ($\mathcal{K}$ 0.9) | 0.603 |  re + se ($\mathcal{G}$ 0.1) | 0.429  |
+|4  |  R + S ($\mathcal{G}$ 0.7)  | 0.344 | S &#8917; se ($\mathcal{G}$ 0.9) | 0.602 | R &#8917; S ($\mathcal{K}$ 0.6) | 0.424 |
+|5  | R + S (K 0.7) | 0.342 | R + se ($\mathcal{G}$ 0.8) | 0.602 | S &#8917; se ($\mathcal{G}$ 0.8) | 0.420 |
+|* | R ($\mathcal{G}$) | 0.259 |  R ($\mathcal{G}$) | 0.543 |  R ($\mathcal{G}$) | 0.346 |
+|* | S ($\mathcal{K}$) | 0.290  |  S ($\mathcal{K}$) | 0.546 |  S ($\mathcal{G}$) | 0.371 |
+|* | re ($\mathcal{K}$) | 0.168 |  re ($\mathcal{K}$) | 0.463 | re ($\mathcal{K}$) | 0.251 |
+|* | se ($\mathcal{K}$) | 0.329 |  se ($\mathcal{K}$) | 0.599 |  se ($\mathcal{K}$) | 0.400 |
+
+# R34
+| | Fusion | ARI | Fusion | NMI | Fusion | Purity |
+|---|---|---|---|---|---|---|
+| 1 | R &#8917; S ($\mathcal{K}$ 0.7) | 0.396 | S + se ($\mathcal{G}$ 0.9) | 0.642 | R &#8917; S ($\mathcal{K}$ 0.7) | 0.513 |
+| 2 | R &#8917; S ($\mathcal{K}$ 0.6)  | 0.380 | S &#8917; se ($\mathcal{G}$ 0.9) | 0.642 | R &#8917; S ($\mathcal{K}$ 0.8) | 0.501 |
+| 3 | R + S ($\mathcal{K}$ 0.7)  | 0.376 | re &#8917; se ($\mathcal{K}$ 0.1) | 0.642 | R + S ($\mathcal{K}$ 0.7) | 0.498 |
+| 4 | R &#8917; S ($\mathcal{G}$ 0.7)  | 0.374 | R &#8917; S ($\mathcal{K}$ 0.7) | 0.642 | R + S ($\mathcal{G}$ 0.7) | 0.494 |
+| 5 | R + S ($\mathcal{G}$ 0.7)  | 0.373 | S &#8917; se ($\mathcal{K}$ 0.9) | 0.641 | R &#8917; S ($\mathcal{G}$ 0.7) | 0.492 |
+| * |  R ($\mathcal{K}$) | 0.278 |  R ($\mathcal{K}$) | 0.587 | R ($\mathcal{G}$) | 0.434 |
+| * |  S ($\mathcal{K}$) | 0.313 | S ($\mathcal{K}$) | 0.578 | S ($\mathcal{K}$) | 0.420 |
+| * | re ($\mathcal{K}$) | 0.213 | re ($\mathcal{K}$) | 0.525 | re ($\mathcal{K}$) | 0.309 |
+| * | se ($\mathcal{K}$) | 0.344 | se ($\mathcal{K}$) | 0.636 |  se ($\mathcal{K}$) | 0.439 |
+
+Top five  ARI, NMI, and  Purity scores for the C23 and R34. * is the result of single modals. 
+The Fusion column is expressed in the form "fusion_method (clustering_algorithm  weight)".
+$\mathcal{G}$ and $\mathcal{K}$ stand for GMM and K-Means.
+R, S, re, and se represent Rico, seq2seq, real activity and semantic activity, respectively.
+&#8917; and + mean concatenation and sum functions
+
 ## For torchtext >= 0.9.1
 Please, change all **torchtext** to **torchtext.legacy** in autoencoder/seq2seq python files
 ```
