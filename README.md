@@ -3,7 +3,7 @@
 ## Overview
 This project is a Torch implementation for our paper, which activity clustering using multimodal deep learning of android applications.
 
-This repository contains source code for paper [An Empirical Study on Multimodal Activity Clustering of Android Applications]([https://ieeexplore.ieee.org/abstract/document/10138412])
+This repository contains source code for paper [An Empirical Study on Multimodal Activity Clustering of Android Applications](https://ieeexplore.ieee.org/abstract/document/10138412)
 ```
 @ARTICLE{choi2023twostage,
   author={Choi, Sungmin and Seo, Hyeon-Tae and Han, Yo-Sub},
