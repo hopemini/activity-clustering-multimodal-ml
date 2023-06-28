@@ -16,10 +16,10 @@ CONVTYPES=( "se" "re" )
 for n in ${CLASSNUM[@]}; do
     for i in ${ITERATION[@]}; do
         echo "seq2seq_${n}_${i} clustering start"
-        python clustering.py -d seq2seq_${n}_${i} -k ${CLASSNUM}
+        python clustering.py -d seq2seq_${n}_${i} -k ${n}
         for CONVTYPE in ${CONVTYPES[@]}; do
             echo "conv_${CONVTYPE}_${n}_${i} clustering start"
-            python clustering.py -d conv_${CONVTYPE}_${n}_${i} -k ${CLASSNUM}
+            python clustering.py -d conv_${CONVTYPE}_${n}_${i} -k ${n}
         done
     done
 done
