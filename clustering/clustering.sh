@@ -14,55 +14,55 @@ CONVTYPES=( "se" "re" )
 
 for n in ${CLASSNUM[@]}; do
     echo "rico_${n} clustering start"
-    python clustering.py -d rico_${n} -k ${CLASSNUM}
+    python clustering.py -d rico_${n} -k ${n}
     for i in ${ITERATION[@]}; do
         echo "seq2seq_${n}_${i} clustering start"
-        python clustering.py -d seq2seq_${n}_${i} -k ${CLASSNUM}
+        python clustering.py -d seq2seq_${n}_${i} -k ${n}
         for CONVTYPE in ${CONVTYPES[@]}; do
             echo "conv_${CONVTYPE}_${n}_${i} clustering start"
-            python clustering.py -d conv_${CONVTYPE}_${n}_${i} -k ${CLASSNUM}
+            python clustering.py -d conv_${CONVTYPE}_${n}_${i} -k ${n}
         done
         for TYPE in ${TYPES[@]}; do
             echo "rico_seq2seq_${n}_${i}_${TYPE} clustering start"
-            python clustering.py -d rico_${n}_seq2seq_${n}_${i} -t ${TYPE} -k ${CLASSNUM}
+            python clustering.py -d rico_${n}_seq2seq_${n}_${i} -t ${TYPE} -k ${n}
         done
         for TYPE in ${TYPES[@]}; do
             echo "conv_re_conv_se_${n}_${i}_${TYPE} clustering start"
-            python clustering.py -d conv_re_${n}_${i}_conv_se_${n}_${i} -t ${TYPE} -k ${CLASSNUM}
+            python clustering.py -d conv_re_${n}_${i}_conv_se_${n}_${i} -t ${TYPE} -k ${n}
         done
         for CONVTYPE in ${CONVTYPES[@]}; do
             for TYPE in ${TYPES[@]}; do
                 echo "rico_conv_${CONVTYPE}_${n}_${i}_${TYPE} clustering start"
-                python clustering.py -d rico_${n}_conv_${CONVTYPE}_${n}_${i} -t ${TYPE} -k ${CLASSNUM}
+                python clustering.py -d rico_${n}_conv_${CONVTYPE}_${n}_${i} -t ${TYPE} -k ${n}
             done
             for TYPE in ${TYPES[@]}; do
                 echo "seq2seq_conv_${CONVTYPE}_${n}_${i}_${TYPE} clustering start"
-                python clustering.py -d seq2seq_${n}_${i}_conv_${CONVTYPE}_${n}_${i} -t ${TYPE} -k ${CLASSNUM}
+                python clustering.py -d seq2seq_${n}_${i}_conv_${CONVTYPE}_${n}_${i} -t ${TYPE} -k ${n}
             done
         done
         for TYPE in ${TYPES[@]}; do
             for WEIGHT in ${WEIGHTS[@]}; do
                 echo "rico_seq2seq_${n}_${i}_${TYPE}_${WEIGHT} clustering start"
-                python clustering.py -d rico_${n}_seq2seq_${n}_${i} -t ${TYPE} -w ${WEIGHT} -k ${CLASSNUM}
+                python clustering.py -d rico_${n}_seq2seq_${n}_${i} -t ${TYPE} -w ${WEIGHT} -k ${n}
             done
         done
         for TYPE in ${TYPES[@]}; do
             for WEIGHT in ${WEIGHTS[@]}; do
                 echo "conv_re_conv_se_${n}_${i}_${TYPE}_${WEIGHT} clustering start"
-                python clustering.py -d conv_re_${n}_${i}_conv_se_${n}_${i} -t ${TYPE} -w ${WEIGHT} -k ${CLASSNUM}
+                python clustering.py -d conv_re_${n}_${i}_conv_se_${n}_${i} -t ${TYPE} -w ${WEIGHT} -k ${n}
             done
         done
         for CONVTYPE in ${CONVTYPES[@]}; do
             for TYPE in ${TYPES[@]}; do
                 for WEIGHT in ${WEIGHTS[@]}; do
                     echo "rico_conv_${CONVTYPE}_${n}_${i}_${TYPE}_${WEIGHT} clustering start"
-                    python clustering.py -d rico_${n}_conv_${CONVTYPE}_${n}_${i} -t ${TYPE} -w ${WEIGHT} -k ${CLASSNUM}
+                    python clustering.py -d rico_${n}_conv_${CONVTYPE}_${n}_${i} -t ${TYPE} -w ${WEIGHT} -k ${n}
                 done
             done
             for TYPE in ${TYPES[@]}; do
                 for WEIGHT in ${WEIGHTS[@]}; do
                     echo "seq2seq_conv_${CONVTYPE}_${n}_${i}_${TYPE}_${WEIGHT} clustering start"
-                    python clustering.py -d seq2seq_${n}_${i}_conv_${CONVTYPE}_${n}_${i} -t ${TYPE} -w ${WEIGHT} -k ${CLASSNUM}
+                    python clustering.py -d seq2seq_${n}_${i}_conv_${CONVTYPE}_${n}_${i} -t ${TYPE} -w ${WEIGHT} -k ${n}
                 done
             done
         done
