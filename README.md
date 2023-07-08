@@ -219,7 +219,7 @@ output
 search/result/
 ```
 ## Our experimental results
-30 iterations: [Link](https://drive.google.com/file/d/1Gwj0xIV0fZRVCtrE6l_rmhbwri72G0Cq/view?usp=sharing)
+30 iterations
 
 
 # C23
