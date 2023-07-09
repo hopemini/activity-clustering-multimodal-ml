@@ -90,9 +90,9 @@ $ ls data_processing/rico_dataset_v0.1_semantic_annotations.zip
 - If dataset size does not match above size (around 150MB), please download [Rico dataset](https://storage.cloud.google.com/crowdstf-rico-uiuc-4540/rico_dataset_v0.1/semantic_annotations.zip) manually, and move to *data_processing* directory.
 
 ### Test & validataion datasets
-[Link1](https://drive.google.com/file/d/1QawDg9evv8pCx4Eoyg-9EIrJAtjFE93c/view?usp=sharing), [Link2](https://drive.google.com/file/d/17V7VioRXlrcaLo8yRDXmAM2l1mm4MdyP/view?usp=sharing)
-
 [Description](https://github.com/hopemini/activity-clustering-multimodal-ml/tree/main/ground_truth)
+[C23](https://github.com/hopemini/activity-clustering-multimodal-ml/tree/main/ground_truth/activity_cluster_category_23)
+[R34](https://github.com/hopemini/activity-clustering-multimodal-ml/tree/main/ground_truth/activity_cluster_category_34)
 
 ## HOW TO EXECUTE OUR MODEL?
 ## Data Processing
