@@ -91,7 +91,8 @@ $ ls data_processing/rico_dataset_v0.1_semantic_annotations.zip
 
 ### Test & validataion datasets
 [Description](https://github.com/hopemini/activity-clustering-multimodal-ml/tree/main/ground_truth)
-[C23](https://github.com/hopemini/activity-clustering-multimodal-ml/tree/main/ground_truth/activity_cluster_category_23)
+
+[C23](https://github.com/hopemini/activity-clustering-multimodal-ml/tree/main/ground_truth/activity_cluster_category_23), 
 [R34](https://github.com/hopemini/activity-clustering-multimodal-ml/tree/main/ground_truth/activity_cluster_category_34)
 
 ## HOW TO EXECUTE OUR MODEL?
